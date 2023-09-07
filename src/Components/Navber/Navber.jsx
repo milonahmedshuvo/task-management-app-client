@@ -37,7 +37,9 @@ const Navber = () => {
 
         </div>
         <Link to="/">
-        <a className="btn btn-ghost normal-case text-xl text-blue-400 font-serif">Task management app</a>
+        <a className="btn btn-ghost normal-case text-xl text-blue-400 font-serif">
+          <img src="https://app.ntaskmanager.com/ed905250282e4067e76d17d64003393d.svg" alt="" />
+          Task management app</a>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -57,10 +59,7 @@ const Navber = () => {
         
            <Link to="/login" className='mr-3'>Login</Link>
            <Link to="/register" className='mr-3'>Register</Link>
-
-          
            
-
 
       </div>
     </div>
