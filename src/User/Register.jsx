@@ -2,13 +2,15 @@ import React, { useContext } from "react";
 import registerImg from "../image/Register.jpg";
 import { useForm } from "react-hook-form";
 import { createmyContextUser } from "../Context/Authprovider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 
 
 
 
 
 const Register = () => {
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -48,6 +50,7 @@ const {userCreate} = useContext(createmyContextUser)
               image: imageData.data.url 
             }
             console.log("user info", userData)
+            userinfoSave(userData)
           })
 
           .catch((err)=>console.log(err))
@@ -65,6 +68,24 @@ const {userCreate} = useContext(createmyContextUser)
   };
 
 
+
+
+  function userinfoSave (user){
+    fetch("http://localhost:5000/userinfo",{
+      method:"POST",
+      headers:{
+        "Content-type":"application/json"
+      },
+      body: JSON.stringify(user)
+    })
+    .then((res) => res.json())
+    .then((data) =>{
+      toast.success("Successful")
+      navigate("/home")
+      console.log(data)
+    })
+    .catch((err) =>console.log(err))
+  }
 
 
 
