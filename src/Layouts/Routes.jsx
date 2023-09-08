@@ -6,6 +6,7 @@ import HomeLayout from "./Home/HomeLayout";
 import TaskCreation from "../Components/TaskCreation/TaskCreation";
 import Teamadd from "../Components/Teamadd/Teamadd";
 import TeamtaskViewManage from "../Components/TeamtaskViewManage/TeamtaskViewManage";
+import Taskfilter from "../Components/Taskfilter/Taskfilter";
 
 const router = createBrowserRouter([
     {
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
             {
                 path:"/home/teamtaskviewmanage",
                 element:<TeamtaskViewManage/>
+            },
+            {
+                path:"/home/taskfilter",
+                element:<Taskfilter/>
             }
         ]
     }

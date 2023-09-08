@@ -14,7 +14,7 @@ const HomeLayout = () => {
         <div className="drawer-content ">
 
 
-          <p>content and outlet hobe</p>
+         
           {/* Page content here */}
           <Outlet></Outlet>
 
@@ -24,9 +24,6 @@ const HomeLayout = () => {
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 w-72 min-h-full bg-base-200 text-base-content">
             {/* Sidebar content here */}
-            <li>
-             <a className="text-lg"> Task management </a>
-            </li>
              
              <Link to='/home' >
              <li>
@@ -42,16 +39,16 @@ const HomeLayout = () => {
 
             <Link to="/home/teamtaskviewmanage" >
             <li>
-            <a className="text-lg"> Team Collaboration </a>
+            <a className="text-lg"> Team task view and manage </a>
             </li>
             </Link>
 
-        
-            <li>
+           
+           <Link to="/home/taskfilter" >
+           <li>
             <a className="text-lg"> Task Filtering and Sorting </a>
             </li>
-
-
+           </Link>
           </ul>
         </div>
       </div>

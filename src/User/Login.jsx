@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 import loginImage from "../image/login.jpg";
 import { createmyContextUser } from "../Context/Authprovider";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
       const {userlogin} = useContext(createmyContextUser)
       const { register, handleSubmit } = useForm();
-
+       const navigate = useNavigate()
 
 
 
@@ -16,6 +16,7 @@ const Login = () => {
           userlogin(data.email, data.password)
           .then((res) => {
             console.log(res.user)
+            navigate("/home")
           })
           .catch((err) =>console.log(err))
 

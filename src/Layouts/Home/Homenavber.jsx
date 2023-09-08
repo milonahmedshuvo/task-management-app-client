@@ -1,7 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { createmyContextUser } from '../../Context/Authprovider'
+import { toast } from 'react-hot-toast'
 
 const Homenavber = () => {
+      const {userlogout, user} = useContext(createmyContextUser)
+      
+
+
+     const handlelogout = () => {
+       userlogout()
+       .then((res) => {
+        console.log(res)
+        toast.success("user logout success")
+       })
+       .catch((err) => console.log(err))
+     }
 
 
 
@@ -9,7 +23,7 @@ const Homenavber = () => {
   return (
     <div>
 
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-[#f16060]">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} htmlFor="my-drawer-2" className="btn btn-ghost drawer-button lg:hidden">
@@ -36,9 +50,9 @@ const Homenavber = () => {
 
         </div>
         <Link to="/">
-        <a className="btn btn-ghost normal-case text-xl text-blue-400 font-serif">
+        <a className="btn btn-ghost normal-case text-xl text-white font-serif">
           <img src="https://app.ntaskmanager.com/ed905250282e4067e76d17d64003393d.svg" alt="" />
-          Task management app</a>
+         management app</a>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -62,8 +76,10 @@ const Homenavber = () => {
           >
             Open drawer
           </label>
+
+           
         
-           <Link to="/login" className='mr-3'>logout</Link>
+           <Link  onClick={handlelogout}  className='mr-3 text-white font-serif'>logout</Link>
            {/* <Link to="/register" className='mr-3'>Register</Link> */}
            
 
