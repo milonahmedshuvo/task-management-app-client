@@ -5,11 +5,11 @@ import { createmyContextUser } from "../../Context/Authprovider";
 
 const Teamadd = () => {
       const {user} = useContext(createmyContextUser)
-      console.log("emailllllllll:",user?.email)
-  
-
+      console.log("email:",user?.email)
+      
  
  
+      
 
   
 

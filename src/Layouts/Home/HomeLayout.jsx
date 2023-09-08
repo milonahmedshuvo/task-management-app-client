@@ -27,10 +27,12 @@ const HomeLayout = () => {
             <li>
              <a className="text-lg"> Task management </a>
             </li>
-
-            <li>
-            <a className="text-lg"> Team Creation </a>
+             
+             <Link to='/home' >
+             <li>
+               <a className="text-lg"> Team Creation </a>
             </li>
+             </Link>
 
             <Link to="/home/taskcreation">
             <li>
@@ -38,10 +40,13 @@ const HomeLayout = () => {
             </li>
             </Link>
 
+            <Link to="/home/teamtaskviewmanage" >
             <li>
             <a className="text-lg"> Team Collaboration </a>
             </li>
+            </Link>
 
+        
             <li>
             <a className="text-lg"> Task Filtering and Sorting </a>
             </li>
