@@ -23,6 +23,7 @@ const {userCreate} = useContext(createmyContextUser)
 
 
   const handleUserRegister = (data) => {
+        
         console.log(data.image)
         console.log(data.image[0])
         const image = data.image[0]
@@ -47,7 +48,9 @@ const {userCreate} = useContext(createmyContextUser)
               username:data.name,
               email : data.email,
               bio : data.bio,
-              image: imageData.data.url 
+              image: imageData.data.url,
+              admin:"",
+              status: false 
             }
             console.log("user info", userData)
             userinfoSave(userData)
